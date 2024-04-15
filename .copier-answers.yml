@@ -1,0 +1,19 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.2.6
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: gregory.mooney@quantstack.net
+author_name: Greg Mooney
+data_format: string
+file_extension: ''
+has_binder: false
+has_settings: true
+kind: frontend
+labextension_name: jupytercad_gather
+mimetype: ''
+mimetype_name: ''
+project_short_description: A JupyterCAD plugin for the JupyterLab-Gather extenstion
+python_name: jupytercad_gather
+repository: https://github.com/gjmooney/jupytercad-gather
+test: true
+viewer_name: ''
+

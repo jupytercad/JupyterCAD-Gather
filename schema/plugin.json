@@ -1,0 +1,8 @@
+{
+  "jupyter.lab.shortcuts": [],
+  "title": "jupytercad_gather",
+  "description": "jupytercad_gather settings.",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
