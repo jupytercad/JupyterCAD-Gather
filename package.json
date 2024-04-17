@@ -18,9 +18,7 @@
     },
     "files": [
         "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
-        "style/**/*.{css,js,eot,gif,html,jpg,json,png,svg,woff2,ttf}",
-        "src/**/*.{ts,tsx}",
-        "schema/*.json"
+        "style/**/*.{css,js,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
     ],
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -57,28 +55,28 @@
         "watch:labextension": "jupyter labextension watch ."
     },
     "dependencies": {
-        "@jupytercad/base": "^1.0.1",
-        "@jupytercad/schema": "^1.0.1",
+        "@jupytercad/base": "^2.0.0-alpha.1",
+        "@jupytercad/schema": "^2.0.0-alpha.1",
         "@jupyterlab/application": "^4.0.0",
-        "@jupyterlab/settingregistry": "^4.0.0",
-        "@types/uuid": "^9.0.8",
-        "uuid": "^9.0.1"
+        "@jupyterlab/coreutils": "^6.0.0",
+        "@jupyterlab/services": "^7.0.0",
+        "uuid": "^8.3.2"
     },
     "devDependencies": {
         "@jupyterlab/builder": "^4.0.0",
-        "@jupyterlab/testutils": "^4.0.0",
-        "@types/jest": "^29.2.0",
         "@types/json-schema": "^7.0.11",
         "@types/react": "^18.0.26",
         "@types/react-addons-linked-state-mixin": "^0.14.22",
+        "@types/uuid": "^8.3.2",
         "@typescript-eslint/eslint-plugin": "^6.1.0",
         "@typescript-eslint/parser": "^6.1.0",
         "css-loader": "^6.7.1",
         "eslint": "^8.36.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-prettier": "^5.0.0",
-        "jest": "^29.2.0",
+        "mkdirp": "^1.0.3",
         "npm-run-all": "^4.1.5",
+        "openapi-typescript-codegen": "^0.23.0",
         "prettier": "^3.0.0",
         "rimraf": "^5.0.1",
         "source-map-loader": "^1.0.2",
@@ -102,7 +100,17 @@
     "jupyterlab": {
         "extension": true,
         "outputDir": "jupytercad_gather/labextension",
-        "schemaDir": "schema"
+        "schemaDir": "schema",
+        "sharedPackages": {
+            "@jupytercad/base": {
+                "singleton": true,
+                "bundled": false
+            },
+            "@jupytercad/schema": {
+                "singleton": true,
+                "bundled": false
+            }
+        }
     },
     "eslintIgnore": [
         "node_modules",
@@ -145,7 +153,10 @@
             "@typescript-eslint/no-unused-vars": [
                 "warn",
                 {
-                    "args": "none"
+                    "args": "none",
+                    "argsIgnorePattern": "^_",
+                    "varsIgnorePattern": "^_",
+                    "caughtErrorsIgnorePattern": "^_"
                 }
             ],
             "@typescript-eslint/no-explicit-any": "off",
