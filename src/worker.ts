@@ -6,12 +6,12 @@ import {
   WorkerAction
 } from '@jupytercad/schema';
 import { PromiseDelegate } from '@lumino/coreutils';
-import { IModelRegistry } from 'jupyterlab-gather';
+import { IModelRegistry } from 'jupyterlab_gather';
 import { v4 as uuid } from 'uuid';
 
 export class GatherWorker implements IJCadWorker {
   constructor(options: GatherWorker.IOptions) {
-    this._modelRegistry = options.modelRegistry;
+    // this._modelRegistry = options.modelRegistry;
   }
 
   get ready(): Promise<void> {
@@ -46,15 +46,16 @@ export class GatherWorker implements IJCadWorker {
           jcObject: IJCadObject;
         };
 
+        console.log('item', item);
+
         //TODO: Change this to based on whatever ends up getting exported
-        //@ts-expect-error WIP
-        this._modelRegistry.registerModel(item.occBrep);
+        // this._modelRegistry.registerModel(item.occBrep);
       }
     }
   }
   private _ready = new PromiseDelegate<void>();
   private _messageHandlers = new Map();
-  private _modelRegistry: IModelRegistry;
+  // private _modelRegistry: IModelRegistry;
 }
 
 export namespace GatherWorker {

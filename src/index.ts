@@ -14,7 +14,7 @@ import {
 } from '@jupyterlab/application';
 import { ISettingRegistry } from '@jupyterlab/settingregistry';
 import { ITranslator, nullTranslator } from '@jupyterlab/translation';
-import { IGatherRegistryToken, IModelRegistry } from 'jupyterlab-gather';
+import { IGatherRegistryToken, IModelRegistry } from 'jupyterlab_gather';
 import { CommandIDs, addCommands } from './command';
 import formSchema from './schema.json';
 import { GatherWorker } from './worker';
@@ -23,7 +23,7 @@ import { GatherWorker } from './worker';
  * Initialization data for the jupytercad_gather extension.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupytercad-gather:plugin',
+  id: 'jupytercad_gather:plugin',
   description: 'A JupyterCAD plugin for the JupyterLab-Gather extenstion',
   autoStart: true,
   requires: [
@@ -41,6 +41,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     modelRegistry: IModelRegistry,
     tracker: IJupyterCadTracker,
     externalCommandRegistry: IJCadExternalCommandRegistry,
+    settingRegistry: ISettingRegistry | null,
     translator?: ITranslator
   ) => {
     console.log('JupyterLab extension jupytercad:gather is activated!');

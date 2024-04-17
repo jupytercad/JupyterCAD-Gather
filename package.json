@@ -109,6 +109,10 @@
             "@jupytercad/schema": {
                 "singleton": true,
                 "bundled": false
+            },
+            "jupyterlab_gather": {
+                "singleton": true,
+                "bundled": false
             }
         }
     },

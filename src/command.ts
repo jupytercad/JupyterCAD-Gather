@@ -8,7 +8,7 @@ import {
 import { JupyterFrontEnd } from '@jupyterlab/application';
 import { showErrorMessage } from '@jupyterlab/apputils';
 import { ITranslator } from '@jupyterlab/translation';
-import { IModelRegistry } from 'jupyterlab-gather';
+import { IModelRegistry } from 'jupyterlab_gather';
 import { exportIcon } from './icon';
 import formSchema from './schema.json';
 
