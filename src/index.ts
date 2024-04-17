@@ -38,10 +38,10 @@ const plugin: JupyterFrontEndPlugin<void> = {
     app: JupyterFrontEnd,
     workerRegistry: IJCadWorkerRegistry,
     schemaRegistry: IJCadFormSchemaRegistry,
-    modelRegistry: IModelRegistry,
     tracker: IJupyterCadTracker,
     externalCommandRegistry: IJCadExternalCommandRegistry,
-    settingRegistry: ISettingRegistry | null,
+    modelRegistry: IModelRegistry,
+    settingRegistry?: ISettingRegistry | null,
     translator?: ITranslator
   ) => {
     console.log('JupyterLab extension jupytercad:gather is activated!');
