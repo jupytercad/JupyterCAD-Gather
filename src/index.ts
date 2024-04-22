@@ -48,8 +48,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
 
     translator = translator ?? nullTranslator;
 
+    const WORKER_ID = 'jupytercad-gather:worker';
     const worker = new GatherWorker({ modelRegistry, tracker });
-    workerRegistry.registerWorker('jupytercad-gather:worker', worker);
+    workerRegistry.registerWorker(WORKER_ID, worker);
     schemaRegistry.registerSchema('Post::EnableGather', formSchema);
 
     addCommands(app, tracker, modelRegistry, translator);

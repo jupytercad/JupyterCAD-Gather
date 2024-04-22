@@ -3,7 +3,8 @@ import {
   IDict,
   IJCadObject,
   IJupyterCadModel,
-  IJupyterCadTracker
+  IJupyterCadTracker,
+  JCadWorkerSupportedFormat
 } from '@jupytercad/schema';
 import { JupyterFrontEnd } from '@jupyterlab/application';
 import { showErrorMessage } from '@jupyterlab/apputils';
@@ -43,7 +44,7 @@ namespace Private {
         Name: newName('GLTF', model),
         //@ts-expect-error wip
         Object: selected.length > 0 ? selected[0] : objects[0].name ?? '',
-        Enabled: false
+        Enabled: true
       };
     },
     syncData: (model: IJupyterCadModel) => {
@@ -53,11 +54,17 @@ namespace Private {
           shape: 'Post::EnableGather',
           parameters,
           visible: true,
-          name: Name
+          name: Name,
+          shapeMetadata: {
+            shapeFormat: JCadWorkerSupportedFormat.GLTF,
+            workerId: 'jupytercad-gather:worker'
+          }
         };
         const sharedModel = model.sharedModel;
+        console.log('test6');
         if (sharedModel) {
           sharedModel.transact(() => {
+            console.log('test7');
             if (parameters['Object'].length > 0) {
               setVisible(sharedModel, parameters['Object'], false);
             }
@@ -81,11 +88,14 @@ namespace Private {
     tracker: IJupyterCadTracker
   ) {
     return async (args: any) => {
+      console.log('test1');
       const current = tracker.currentWidget;
 
       if (!current) {
+        console.log('test2');
         return;
       }
+      console.log('test3');
 
       const formJsonSchema = JSON.parse(JSON.stringify(formSchema));
       formJsonSchema['required'] = ['Name', ...formJsonSchema['required']];
@@ -93,6 +103,7 @@ namespace Private {
         Name: { type: 'string', description: 'The Name of the Object' },
         ...formJsonSchema['properties']
       };
+      console.log('test4');
       const { ...props } = formJsonSchema;
       const dialog = new FormDialog({
         context: current.context,
@@ -102,6 +113,7 @@ namespace Private {
         syncData: meshOperator.syncData(current.context.model),
         cancelButton: true
       });
+      console.log('test5');
       await dialog.launch();
     };
   }
