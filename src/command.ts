@@ -1,4 +1,4 @@
-import { FormDialog, newName, setVisible } from '@jupytercad/base';
+import { FormDialog, newName } from '@jupytercad/base';
 import {
   IDict,
   IJCadObject,
@@ -61,14 +61,8 @@ namespace Private {
           }
         };
         const sharedModel = model.sharedModel;
-        console.log('test6');
         if (sharedModel) {
           sharedModel.transact(() => {
-            console.log('test7');
-            if (parameters['Object'].length > 0) {
-              setVisible(sharedModel, parameters['Object'], false);
-            }
-
             if (!sharedModel.objectExists(objectModel.name)) {
               sharedModel.addObject(objectModel as IJCadObject);
             } else {
@@ -88,14 +82,11 @@ namespace Private {
     tracker: IJupyterCadTracker
   ) {
     return async (args: any) => {
-      console.log('test1');
       const current = tracker.currentWidget;
 
       if (!current) {
-        console.log('test2');
         return;
       }
-      console.log('test3');
 
       const formJsonSchema = JSON.parse(JSON.stringify(formSchema));
       formJsonSchema['required'] = ['Name', ...formJsonSchema['required']];
@@ -103,7 +94,6 @@ namespace Private {
         Name: { type: 'string', description: 'The Name of the Object' },
         ...formJsonSchema['properties']
       };
-      console.log('test4');
       const { ...props } = formJsonSchema;
       const dialog = new FormDialog({
         context: current.context,
@@ -113,7 +103,6 @@ namespace Private {
         syncData: meshOperator.syncData(current.context.model),
         cancelButton: true
       });
-      console.log('test5');
       await dialog.launch();
     };
   }
