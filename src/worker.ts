@@ -47,7 +47,7 @@ export class GatherWorker implements IJCadWorker {
       const modelArrayBuffer = msg.payload['postShape'];
 
       this._modelRegistry.registerModel({
-        name: jCadObject.name,
+        name: jCadObject.name.toLowerCase(),
         gltf: modelArrayBuffer
       });
     }
