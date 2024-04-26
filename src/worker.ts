@@ -42,26 +42,17 @@ export class GatherWorker implements IJCadWorker {
       return;
     }
 
-    console.log('msg', msg);
-    // if (msg.payload && Object.keys(msg.payload).length > 0) {
-    //   const jCadObject = msg.payload['jcObject'];
-    //   const modelArrayBuffer = msg.payload['postShape'];
+    if (msg.payload && Object.keys(msg.payload).length > 0) {
+      const jCadObject = msg.payload['jcObject'];
+      const modelArrayBuffer = msg.payload['postShape'];
 
-    //   this._modelRegistry.registerModel({
-    //     name: jCadObject.name.toLowerCase(),
-    //     gltf: modelArrayBuffer
-    //   });
-    // }
-    console.log('msg.payload', msg.payload);
-    // const jCadObject = msg.payload['jcObject'];
-
-    const modelArrayBuffer = msg.payload;
-
-    this._modelRegistry.registerModel({
-      name: 'scene',
-      gltf: modelArrayBuffer
-    });
+      this._modelRegistry.registerModel({
+        name: jCadObject.name.toLowerCase(),
+        gltf: modelArrayBuffer
+      });
+    }
   }
+
   private _ready = new PromiseDelegate<void>();
   private _messageHandlers = new Map();
   private _modelRegistry: IModelRegistry;
