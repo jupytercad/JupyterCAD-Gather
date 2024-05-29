@@ -1,6 +1,6 @@
 # jupytercad_gather
 
-[![Github Actions Status](https://github.com/gjmooney/jupytercad-gather/workflows/Build/badge.svg)](https://github.com/gjmooney/jupytercad-gather/actions/workflows/build.yml)
+[![Github Actions Status](https://github.com/jupytercad/jupytercad-gather/workflows/Build/badge.svg)](https://github.com/jupytercad/jupytercad-gather/actions/workflows/build.yml)
 
 A JupyterCAD plugin for the JupyterLab-Gather extenstion
 
