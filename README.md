@@ -7,6 +7,8 @@ A JupyterCAD plugin for the JupyterLab-Gather extenstion
 ## Requirements
 
 - JupyterLab >= 4.0.0
+- JupyterCAD >= 2.0.0a6
+- JupyterLab-Gather >= 0.1.0
 
 ## Install
 
@@ -15,6 +17,32 @@ To install the extension, execute:
 ```bash
 pip install jupytercad_gather
 ```
+
+## Usage
+
+1. In the JupyterCAD UI, you'll see a new icon on the toolbar. Go ahead and give that a click.
+
+   ![cad model](./docs/images/1_cadmodel.png 'CAD Model')
+
+2. That'll open a new dialog where you can register the model with JupyterLab-Gather, enter the name of the object you want to register and click submit.
+
+   ![dialog](./docs/images/2_dialog.png 'Dialog')
+
+3. In the left hand sidebar of JupyterLab-Gather, you'll see a list of available models, including the one you just registered, select the model you just added and click the button to set the model.
+
+   ![sidebar](./docs/images/3_sidebar.png 'Sidebar')
+
+4. This loads the model from JupyterCAD in JupyterLab-Gather. You can manipulate the model using the JupyterCAD interface and the changes will be rendered on the AR model.
+
+   ![update](./docs/images/4_update.png 'Update')
+
+5. If you'd like to load the entire JupyterCAD scene into JupyterLab-Gather, simply enter `Scene` (or `scene`) as the name of the object when registering.
+
+   ![register scene](./docs/images/5_scene.png 'Register Scene')
+
+6. Load the scene just like you did for the object.
+
+   ![loaded scene](./docs/images/6_loaded_scene.png 'Loaded Scene')
 
 ## Uninstall
 
