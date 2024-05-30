@@ -60,6 +60,7 @@
         "@jupyterlab/application": "^4.0.0",
         "@jupyterlab/coreutils": "^6.0.0",
         "@jupyterlab/services": "^7.0.0",
+        "jest": "^29.7.0",
         "jupyterlab_gather": "^0.1.0",
         "uuid": "^8.3.2"
     },
