@@ -55,11 +55,12 @@
         "watch:labextension": "jupyter labextension watch ."
     },
     "dependencies": {
-        "@jupytercad/base": "^2.0.0-alpha.5",
-        "@jupytercad/schema": "^2.0.0-alpha.5",
+        "@jupytercad/base": "^2.0.0-alpha.6",
+        "@jupytercad/schema": "^2.0.0-alpha.6",
         "@jupyterlab/application": "^4.0.0",
         "@jupyterlab/coreutils": "^6.0.0",
         "@jupyterlab/services": "^7.0.0",
+        "jupyterlab_gather": "^0.1.0",
         "uuid": "^8.3.2"
     },
     "devDependencies": {

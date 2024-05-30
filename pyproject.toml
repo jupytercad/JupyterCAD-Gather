@@ -23,6 +23,8 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
+    "jupyterlab-gather>=0.1.0",
+    "jupytercad>=2.0.0a6"
 ]
 dynamic = ["version", "description", "authors", "urls", "keywords"]
 
