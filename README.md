@@ -7,6 +7,8 @@ A JupyterCAD plugin for the JupyterLab-Gather extenstion
 ## Requirements
 
 - JupyterLab >= 4.0.0
+- JupyterCAD >= 2.0.0a6
+- JupyterLab-Gather >= 0.1.0
 
 ## Install
 
@@ -15,6 +17,8 @@ To install the extension, execute:
 ```bash
 pip install jupytercad_gather
 ```
+
+## Usage
 
 ## Uninstall
 
