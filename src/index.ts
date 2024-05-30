@@ -44,7 +44,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     settingRegistry?: ISettingRegistry | null,
     translator?: ITranslator
   ) => {
-    console.log('JupyterLab extension jupytercad:gather is activated!');
+    console.log('JupyterLab extension jupytercad_gather is activated!');
 
     translator = translator ?? nullTranslator;
 

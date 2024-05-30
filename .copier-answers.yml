@@ -16,4 +16,3 @@ python_name: jupytercad_gather
 repository: https://github.com/jupytercad/jupytercad-gather
 test: true
 viewer_name: ''
-
