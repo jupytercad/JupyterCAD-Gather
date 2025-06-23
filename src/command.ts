@@ -43,7 +43,7 @@ namespace Private {
       return {
         Name: newName('GLTF', model),
         //@ts-expect-error wip
-        Object: selected.length > 0 ? selected[0] : objects[0].name ?? '',
+        Object: selected.length > 0 ? selected[0] : (objects[0].name ?? ''),
         Enabled: true
       };
     },
