@@ -39,13 +39,22 @@ namespace Private {
     shape: 'Post::EnableGather',
     default: (model: IJupyterCadModel) => {
       const objects = model.getAllObject();
-      const selected = model.localState?.selected?.value || [];
+      const selected = model.localState?.selected?.value;
+
+      let objectName = objects[0]?.name ?? '';
+
+      if (selected) {
+        for (const key in selected) {
+          if (selected[key].type === 'shape') {
+            objectName = key;
+            break;
+          }
+        }
+      }
+
       return {
         Name: newName('GLTF', model),
-        Object:
-          Object.keys(selected).length > 0
-            ? Object.entries(selected)[0]
-            : objects[0].name ?? '',
+        Object: objectName,
         Enabled: true
       };
     },
