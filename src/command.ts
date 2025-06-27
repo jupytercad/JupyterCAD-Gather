@@ -94,13 +94,13 @@ namespace Private {
         Name: { type: 'string', description: 'The Name of the Object' },
         ...formJsonSchema['properties']
       };
-      const { ...props } = formJsonSchema;
+
       const dialog = new FormDialog({
-        context: current.context,
+        model: current.model,
         title: meshOperator.title,
-        sourceData: meshOperator.default(current.context.model),
-        schema: props,
-        syncData: meshOperator.syncData(current.context.model),
+        sourceData: meshOperator.default(current.model),
+        schema: formJsonSchema,
+        syncData: meshOperator.syncData(current.model),
         cancelButton: true
       });
       await dialog.launch();
