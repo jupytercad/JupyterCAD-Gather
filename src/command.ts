@@ -42,8 +42,10 @@ namespace Private {
       const selected = model.localState?.selected?.value || [];
       return {
         Name: newName('GLTF', model),
-        //@ts-expect-error wip
-        Object: selected.length > 0 ? selected[0] : objects[0].name ?? '',
+        Object:
+          Object.keys(selected).length > 0
+            ? Object.entries(selected)[0]
+            : objects[0].name ?? '',
         Enabled: true
       };
     },
