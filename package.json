@@ -7,9 +7,9 @@
         "jupyterlab",
         "jupyterlab-extension"
     ],
-    "homepage": "https://github.com/jupytercad/jupytercad-gather",
+    "homepage": "https://github.com/jupytercad/jupyterCAD-Gather",
     "bugs": {
-        "url": "https://github.com/jupytercad/jupytercad-gather/issues"
+        "url": "https://github.com/jupytercad/jupyterCAD-Gather/issues"
     },
     "license": "BSD-3-Clause",
     "author": {
@@ -25,7 +25,7 @@
     "style": "style/index.css",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jupytercad/jupytercad-gather.git"
+        "url": "https://github.com/jupytercad/JupyterCAD-Gather.git"
     },
     "scripts": {
         "build": "jlpm build:lib && jlpm build:labextension:dev",
@@ -55,8 +55,8 @@
         "watch:labextension": "jupyter labextension watch ."
     },
     "dependencies": {
-        "@jupytercad/base": "^2.0.0-alpha.6",
-        "@jupytercad/schema": "^2.0.0-alpha.6",
+        "@jupytercad/base": "^3.1.4",
+        "@jupytercad/schema": "^3.1.4",
         "@jupyterlab/application": "^4.0.0",
         "@jupyterlab/coreutils": "^6.0.0",
         "@jupyterlab/services": "^7.0.0",
